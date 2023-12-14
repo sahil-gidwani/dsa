@@ -1,0 +1,45 @@
+Creating string objects:
+String s = "Hello World"; - string literal
+String s = new String(Hello World"); - new keyword
+
+Traversing string objects:
+for(int i = 0; i < s.length(); ++i)
+for(char c : s.toCharArray())
+
+Methods:
+length: int length() - int n = str.length();
+isEmpty: boolean isEmpty() - boolean result = str.isEmpty();
+charAt: char charAt(int index) - char c = str.charAt(idx);
+indexOf: int indexOf(String s) - int index = str.indexOf('o');
+         int indexOf(String s, int beginIndex) - int index = str.indexOf("ooo", 3);
+lastIndexOf: int lastIndexOf(int ch) - int lastIndex = str.lastIndexOf('o');
+
+compareTo: int compareTo(String anotherString) -  int result = str1.compareTo(str2); // result will be a negative value because "apple" - str1 comes before "banana" - str2 in lexicographic order
+compareToIgnoreCase: int compareToIgnoreCase(String anotherString) - int result = str1.compareToIgnoreCase(str2);
+equals: boolean equals(String anotherString) - boolean result = str1.equals(str2);
+equalsIgnoreCase: boolean equalsIgnoreCase(String anotherString) - boolean result = str1.equalsIgnoreCase(str2);
+
+concat: String concat(String str) - String result = str1.concat(str2);
+replace: String replace(CharSequence target, CharSequence replacement) - String result = str.replace("o", "x");
+replaceFirst: String replaceFirst(String regex, String replacement) - String result = str.replaceFirst("o", "x");
+replaceAll: String replaceAll(String regex, String replacement) - String result = str.replaceAll("[oO]", "x");
+
+contains: boolean contains(CharSequence sequence) - boolean result = str.contains("Hello");
+startsWith: boolean startsWith(String prefix) - boolean result = str.startsWith("Hello");
+endsWith: boolean endsWith(String suffix) - boolean result = str.endsWith("!");
+format: static String format(Locale locale, String format, Object... args) - String result = String.format(Locale.US, "Value: %.2f", 3.14159);
+
+trim: String trim() - String trimmedStr = str.trim();
+split: String[] split(String regex) - String[] result = str.split(","); 
+join: static String join(CharSequence delimiter, Iterable<? extends CharSequence> elements) - String joinedString = String.join(" ", words);
+
+subSequence: CharSequence subSequence(int beginIndex, int endIndex) - CharSequence sub = str.subSequence(0, 5);
+substring: String substring(int beginIndex, int endIndex) - String sub = str.substring(7, 11);
+           String substring(int beginIndex) - String sub = str.substring(7);
+
+toCharArray: char[] toCharArray() - char[] charArray = str.toCharArray();
+toLowerCase: String toLowerCase() - String result = str.toLowerCase(); 
+toUpperCase: String toUpperCase() - String result = str.toUpperCase();
+toString: String toString() - String result = str.toString();
+valueOf: static String valueOf(int i) - String s = String.valueOf(30);
+         static String valueOf(double d) - String s = String.valueOf(3.56)

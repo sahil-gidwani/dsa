@@ -1,0 +1,33 @@
+Creating arraylist:
+ArrayList<Integer> arr1 = new ArrayList<Integer>(n);
+
+Traversing arraylist:
+for (int i = 0; i < fruits.size(); i++) {
+    System.out.println(fruits.get(i));
+}
+for (String fruit : fruits)
+fruits.forEach(fruit -> System.out.println(fruit));
+
+Methods:
+add: void add(E e) - list.add("Hello");
+     void add(int index, E element) - list.add(1, "Java");
+addAll: void addAll(Collection<? extends E> c) - list1.addAll(list2);
+        void addAll(int index, Collection<? extends E> c) - list1.addAll(1, list2);
+contains: boolean contains(Object o) - boolean result = list.contains("World");
+containsAll: boolean containsAll(Collection<?> c) - list1.containsAll(list2);
+get: E get(int index) - String ans = list.get(1);
+set: void set(int index, E element) - list.set(1, "Java");
+remove: void remove(int index) - list.remove(1);
+        void remove(Object o) - list.remove("World");
+removeAll: void removeAll(Collection<?> c) - list.removeAll(toRemove);
+removeRange: void removeRange(int fromIndex, int toIndex) - list.removeRange(1, 3);
+clear: void clear() - list.clear();
+indexOf: int indexOf(Object O) - int i = list.indexOf("Hello");
+lastIndexOf: int lastIndexOf(Object o) - int i = list.lastIndexOf("Hello")
+size: int size() - int s = list.size();
+isEmpty: boolean isEmpty() - boolean result = list.isEmpty();
+forEach: void forEach(Consumer<? super E> action) - list.forEach(str -> System.out.println(str));
+clone: Object clone() - ArrayList<String> clonedList = (ArrayList<String>) list.clone();
+equals: boolean equals(Object o) - boolean result = list1.equals(list2);
+subList: List<E> subList(int fromIndex, int toIndex) - List<Integer> subList = list.subList(1, 4);
+toArray: Object[] toArray() - String[] arr = list.toArray();

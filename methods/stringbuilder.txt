@@ -1,0 +1,27 @@
+Creating stringbuilder:
+StringBuilder sb = new StringBuilder(); // Creates an empty StringBuilder with a default initial capacity of 16 characters.
+StringBuilder sb = new StringBuilder(20); // Creates an empty StringBuilder with the specified initial capacity of 20 characters.
+StringBuilder sb = new StringBuilder(initialString); // Creates a StringBuilder initialized to the contents of the specified string "Hello".
+
+Traversing stringbuilder:
+for (int i = 0; i < sb.length(); i++){
+    char c = sb.charAt(i);
+}
+
+Methods:
+length: int length() - int length = sb.length();
+charAt: char charAt(int index) - char ch = sb.charAt(4);
+setCharAt: void setCharAt(int index, char ch) - sb.setCharAt(4, 'X');
+append: void append(Object obj) - sb.append(", World!");
+delete: void delete(int start, int end) - sb.delete(0, 5);
+deleteCharAt: void deleteCharAt(int index) - sb.deleteCharAt(5);
+replace: void replace(int start, int end, String str) - sb.replace(7, 12, "Java");
+subSequence: CharSequence subSequence(int start, int end) - CharSequence sub = sb.subSequence(0, 5);
+substring: String substring(int start) - String sub = sb.substring(7);
+           String substring(int start, int end) - String sub = sb.substring(0, 5);
+indexOf: int indexOf(String str) - int index = sb.indexOf("o");
+         int indexOf(String str, int fromIndex) - int index = sb.indexOf("o", 5);
+lastIndexOf: int lastIndexOf(String str) - int index = sb.lastIndexOf("o");
+             int lastIndexOf(String str, int fromIndex) - int index = sb.lastIndexOf("o", 5);
+reverse: void reverse() - sb.reverse();
+toString: String toString() - String str = sb.toString();

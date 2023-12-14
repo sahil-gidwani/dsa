@@ -1,0 +1,27 @@
+In Java, hashing time complexity and space complexity depend on the specific data structure being used, such as HashMap, HashSet, or Hashtable. Here's a breakdown of time and space complexities for these common hashing data structures:
+
+HashMap and HashSet:
+Time Complexity:
+Average Case (amortized): O(1) for insertion, deletion, and retrieval of elements.
+Worst Case: In Java 8 and later versions, the worst-case time complexity for these operations is O(log n) due to the usage of red-black trees for collision handling. In Java 7 and earlier versions, the worst-case time complexity is O(n) when a lot of collisions occur and the internal linked lists grow too long. The rehashing process is triggered to maintain a good average case, which involves copying elements to a new larger array, making it O(n) in some cases.
+Space Complexity: O(n) where n is the number of elements in the HashMap or HashSet. The space complexity is linear in the number of elements as each element requires an entry in the underlying data structure.
+
+
+Both HashMap and HashSet in Java are implemented based on hash tables, which use an array combined with linked lists (in Java 8 and earlier versions) or red-black trees (in Java 8 and later versions) to manage key-value pairs (HashMap) or unique elements (HashSet).
+
+HashMap:
+The HashMap class in Java is used to store key-value pairs in which each key is unique. The keys are hashed to find their respective index in the underlying array, which allows for efficient lookup, insertion, and deletion operations.
+Internally, a HashMap uses an array of Node objects (known as a bucket array) to store the key-value pairs. Each Node contains the key, value, and a reference to the next Node in case of collisions.
+The hashing function converts the key's hash code into an index within the array. If multiple keys have the same index (collision), the elements are stored as a linked list (or a red-black tree in Java 8+).
+When the number of elements in a bucket exceeds a certain threshold, the linked list is transformed into a red-black tree for better performance.
+The HashMap automatically resizes its internal array (rehashing) when the load factor exceeds a specific threshold, ensuring a relatively constant time complexity for most operations.
+
+HashSet:
+The HashSet class in Java is used to store a collection of unique elements. It ensures that each element is unique by utilizing the same hash table concept as HashMap.
+Internally, a HashSet uses a HashMap to store elements as keys and uses a common dummy value (such as private static final Object PRESENT = new Object();) as the value for all keys. This approach leverages the key uniqueness property of a HashMap to ensure unique elements in a HashSet.
+When adding an element to the HashSet, it is converted into a key in the underlying HashMap, and the dummy value is associated with that key.
+The hash code of each element is used to compute its index within the HashMap, similar to how it works in HashMap.
+Like HashMap, HashSet automatically resizes its internal HashMap when the load factor exceeds a certain threshold.
+It's worth noting that in Java 8 and later versions, HashMap and HashSet use tree structures (red-black trees) for bucket collisions when the number of elements in a bucket exceeds a certain threshold. This improves the time complexity of certain operations from O(n) to O(log n) in the worst-case scenarios.
+
+In summary, both HashMap and HashSet use hash tables internally to provide fast access and storage of elements. HashMap stores key-value pairs, whereas HashSet stores unique elements. They are widely used in Java for their efficiency in handling large datasets and providing constant-time average case performance for most operations.
